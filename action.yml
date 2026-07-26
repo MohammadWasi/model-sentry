@@ -1,0 +1,29 @@
+name: Model Sentry
+description: Detect source-backed changes across the AI vendors your application depends on.
+author: Model Sentry contributors
+branding:
+  icon: shield
+  color: purple
+inputs:
+  config-path:
+    description: Path to a Model Sentry JSON configuration file.
+    required: false
+    default: model-sentry.json
+  fail-on:
+    description: Fail when a detected change meets this severity: none, low, medium, high, or critical.
+    required: false
+    default: none
+  dry-run:
+    description: Evaluate sources without updating local snapshot state.
+    required: false
+    default: "false"
+outputs:
+  status:
+    description: initial, no_change, changed, or error
+  report-path:
+    description: Absolute path to the generated JSON report.
+  highest-severity:
+    description: Highest detected severity, if any.
+runs:
+  using: node20
+  main: dist/action.js

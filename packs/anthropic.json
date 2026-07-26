@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "provider": "anthropic",
+  "label": "Anthropic",
+  "officialHosts": ["platform.claude.com"],
+  "reviewNote": "This pack monitors Anthropic's public Claude Platform release notes only. Confirm that retained snapshots comply with applicable Anthropic terms before enabling it.",
+  "sources": [
+    {
+      "id": "anthropic-release-notes",
+      "provider": "anthropic",
+      "title": "Anthropic API release notes",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "kind": "changelog"
+    }
+  ]
+}

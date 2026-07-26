@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "provider": "openai",
+  "label": "OpenAI",
+  "officialHosts": ["developers.openai.com"],
+  "reviewNote": "This pack monitors OpenAI's public developer changelog only. Confirm that retained snapshots comply with applicable OpenAI terms before enabling it.",
+  "sources": [
+    {
+      "id": "openai-changelog",
+      "provider": "openai",
+      "title": "OpenAI developer changelog",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "kind": "changelog"
+    }
+  ]
+}

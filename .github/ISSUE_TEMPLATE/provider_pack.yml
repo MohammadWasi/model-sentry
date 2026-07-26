@@ -1,0 +1,33 @@
+name: Provider pack proposal
+description: Propose an official, terms-compatible source pack.
+title: "pack: "
+labels: [provider-pack]
+body:
+  - type: input
+    id: provider
+    attributes:
+      label: Provider identifier
+      placeholder: example-ai
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Canonical official source URL
+      placeholder: https://docs.example.com/release-notes
+    validations:
+      required: true
+  - type: textarea
+    id: terms
+    attributes:
+      label: Source and retention review
+      description: Explain why the source is official, public, and compatible with local snapshot retention. Do not paste scraped or proprietary content.
+    validations:
+      required: true
+  - type: textarea
+    id: classification
+    attributes:
+      label: Intended classifications
+      description: Describe representative, publicly verifiable wording the pack should help flag.
+    validations:
+      required: true

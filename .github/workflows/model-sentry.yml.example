@@ -1,0 +1,33 @@
+name: Model Sentry
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore Model Sentry state
+        uses: actions/cache/restore@v4
+        with:
+          path: .model-sentry/state
+          key: model-sentry-${{ runner.os }}-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            model-sentry-${{ runner.os }}-${{ github.ref_name }}-
+      - name: Detect source-backed changes
+        uses: ./
+        with:
+          config-path: model-sentry.json
+          fail-on: high
+      - name: Save Model Sentry state
+        if: ${{ always() && hashFiles('.model-sentry/state/**') != '' }}
+        uses: actions/cache/save@v4
+        with:
+          path: .model-sentry/state
+          key: model-sentry-${{ runner.os }}-${{ github.ref_name }}-${{ github.run_id }}

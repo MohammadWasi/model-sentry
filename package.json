@@ -1,0 +1,51 @@
+{
+  "name": "model-sentry",
+  "version": "0.1.0",
+  "description": "Source-backed change detection for the AI vendors your application depends on.",
+  "type": "module",
+  "bin": {
+    "model-sentry": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts",
+    "!dist/*.test.js",
+    "!dist/*.test.d.ts",
+    "packs",
+    "action.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "test": "npm run build && node --test dist/*.test.js",
+    "check": "tsc --noEmit -p tsconfig.json",
+    "pack:check": "npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "changelog",
+    "monitoring",
+    "github-action",
+    "vendor-risk"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.8.3"
+  }
+}

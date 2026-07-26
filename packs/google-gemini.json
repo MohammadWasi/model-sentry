@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "provider": "google-gemini",
+  "label": "Google Gemini",
+  "officialHosts": ["ai.google.dev"],
+  "reviewNote": "This pack monitors the public Gemini API release notes only. Confirm that retained snapshots comply with applicable Google terms before enabling it.",
+  "sources": [
+    {
+      "id": "google-gemini-changelog",
+      "provider": "google-gemini",
+      "title": "Gemini API changelog",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "kind": "changelog"
+    }
+  ]
+}

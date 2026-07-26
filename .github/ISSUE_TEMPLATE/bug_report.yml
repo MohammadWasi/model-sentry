@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible Model Sentry defect.
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "For security issues or credentials, do not open a public issue. Use the repository's private vulnerability-reporting path."
+  - type: input
+    id: version
+    attributes:
+      label: Model Sentry version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and redacted configuration
+      description: Remove API keys, internal URLs, and retained source text that cannot be shared.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true

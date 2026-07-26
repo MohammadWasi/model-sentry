@@ -1,0 +1,5 @@
+node_modules/
+.model-sentry/
+coverage/
+.DS_Store
+*.log

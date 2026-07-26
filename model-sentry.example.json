@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "project": "my-ai-application",
+  "stateDir": ".model-sentry/state",
+  "reportDir": ".model-sentry/reports",
+  "sources": [
+    {
+      "id": "openai-changelog",
+      "provider": "openai",
+      "title": "OpenAI developer changelog",
+      "url": "https://developers.openai.com/changelog/",
+      "kind": "changelog"
+    }
+  ]
+}
